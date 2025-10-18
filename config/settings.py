@@ -103,7 +103,17 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+
+# allauth configs
 SITE_ID = 1
+ACCOUNT_SESSION_REMEMBER = True  # remember loged in user and dont show remember me check
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # no need to enter password twice
+ACCOUNT_USERNAME_REQUIRED = False # no need to enter username while signing up
+ACCOUNT_AUTHENTICATION_METHOD= 'email' 
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL=True
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -159,5 +169,4 @@ LOGOUT_REDIRECT_URL = 'home'
 
 # crispy config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"
